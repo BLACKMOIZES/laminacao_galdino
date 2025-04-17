@@ -4,7 +4,8 @@ body {
   font-family: Arial, sans-serif;
   color: white;
   background-color: black;
-  overflow-y: auto; /* Permite rolagem vertical */
+  overflow-y: auto;
+  line-height: 1.6;
 }
 
 /* Estilo do vídeo de fundo */
@@ -14,139 +15,190 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  z-index: -1; 
+  object-fit: cover;
+  z-index: -1;
 }
 
 /* Estilo da aplicação */
 .App {
   text-align: center;
-  position: relative; 
-  z-index: 1; 
-  min-height: 100vh; /* Garante altura mínima para rolagem */
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 /* Navegação */
 nav {
-  background-color: rgba(0, 128, 0, 0.8); 
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+  background-color: transparent;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 1px solid black; /* Alterado para preto */
 }
 
 nav a {
-  color: white;
+  color: #00ff00;
   text-decoration: none;
-  margin: 0 15px;
   font-size: 18px;
-  transition: color 0.3s; 
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 nav a:hover {
-  text-decoration: underline;
-  color: #ffcc00;
+  background-color: #ffcc00; /* amarelo ao passar o mouse */
+  color: black; /* texto preto ao passar o mouse */
 }
 
 /* Container principal */
 .container {
-  padding: 20px;
+  padding: 30px 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
 }
 
-/* Estilo aprimorado para a seção Sobre Nós */
+/* Seção Sobre Nós */
 .about-container {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 700px;
+  margin: 30px auto;
   text-align: center;
-  max-width: 600px;
-  margin: 20px auto;
-  box-shadow: 0px 4px 8px rgba(0, 255, 0, 0.2);
+  box-shadow: 0px 4px 15px rgba(0, 255, 0, 0.2);
 }
 
 .about-container h2 {
-  color: green;
+  color: #00ff00;
+  margin-bottom: 15px;
 }
 
-/* Estilo do cabeçalho */
+/* Cabeçalho */
 .App-header {
-  background-color: rgba(0, 0, 0, 0.7); 
-  min-height: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5em;
-  color: green;
-  border-bottom: 2px solid green;
+  background-color: transparent;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 20px 0;
+  border-bottom: 2px solid black; /* Alterado para preto */
+  color: #00ff00;
 }
 
-/* Estilo do rodapé */
+/* Rodapé */
 .App-footer {
   background-color: black;
   color: gray;
-  padding: 20px 0;
+  padding: 30px 0;
   text-align: center;
-  position: relative;
-  bottom: 0;
   width: 100%;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
-/* Estilos para o formulário de cadastro */
+/* Formulário */
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  margin: 20px auto; /* Garante espaçamento */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  margin: 30px auto;
+  box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.15);
 }
 
-/* Campo de entrada */
+/* Inputs */
 input {
   margin: 10px 0;
-  padding: 10px;
+  padding: 12px;
   width: 90%;
-  border-radius: 5px;
-  border: 1px solid green;
+  border-radius: 8px;
+  border: 1px solid #00ff00;
   outline: none;
-  transition: border-color 0.3s; 
+  background-color: transparent;
+  color: white;
+  transition: all 0.3s ease;
 }
 
 input:focus {
-  border-color: white;
+  border-color: #ffcc00;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Botão */
-button {
+/* Botões */
+button,
+.edit,
+.delete {
   padding: 10px 20px;
-  background-color: green;
-  color: white;
+  margin: 8px 4px;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
   cursor: pointer;
-  transition: background 0.3s; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button {
+  background-color: #00b300;
+  color: white;
 }
 
 button:hover {
-  background-color: darkgreen;
+  background-color: #009900;
+  transform: scale(1.05);
 }
 
-/* Animação do logo */
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-      animation: App-logo-spin infinite 20s linear;
-  }
+.edit {
+  background-color: #00b3b3;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-      transform: rotate(0deg);
+.edit:hover {
+  background-color: #009999;
+}
+
+.delete {
+  background-color: #cc0000;
+  color: white;
+}
+
+.delete:hover {
+  background-color: #990000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-      transform: rotate(360deg);
+
+  form {
+    width: 95%;
   }
+
+  .about-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .App-header {
+    font-size: 1.5em;
+  }
+
+  nav a {
+    margin: 5px 0;
+  }
+ 
+}
+
+.App-logo-img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
 }
